@@ -28,6 +28,8 @@ try({
   
   if(nrow(election_dat30)!=0){
     
+    print("render now")
+    
     # Sys.sleep(60*7)
     all_dat <- readRDS("data/all_dat.rds")
     
@@ -45,6 +47,9 @@ try({
     unlink("out", recursive = T, force = T)
     
   } else {
+    
+    print("election data empty")
+    
     
     rmarkdown::render("logs/index.Rmd")
     
